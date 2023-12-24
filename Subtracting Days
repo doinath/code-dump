@@ -1,0 +1,138 @@
+From one of the problems in our Final Exam:
+Problem name [Subtracting Days]
+
+  If you can time travel, you can most definitely go back in time.
+Given the month, day, and year -- all integers (1-12 for the month, 1-31 for the day, and the year), 
+and the number of days to deduct, output the resulting day.
+
+Note to also consider leap years in your calculation.
+
+Sample Output 1
+
+Enter month: 12
+Enter day: 15
+Enter year: 2023
+Days to go back: 7
+
+December 8, 2023
+
+Sample Output 2
+
+Enter month: 5
+Enter day: 2
+Enter year: 2024
+Days to go back: 9
+
+April 23, 2024
+
+Sample Output 3
+
+Enter month: 3
+Enter day: 3
+Enter year: 2020
+Days to go back: 8
+
+February 24, 2020
+
+// | Code Starts Here |
+
+> Header File 
+
+#include <stdio.h>
+  int leapyear(int year)
+{
+    return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
+}
+
+int monthCount(int month)
+{
+    switch (month)
+    {
+    case 1:
+        printf("\nJanuary ");
+        break;
+    case 2:
+        printf("\nFebruary ");
+        break;
+    case 3:
+        printf("\nMarch ");
+        break;
+    case 4:
+        printf("\nApril ");
+        break;
+    case 5:
+        printf("\nMay ");
+        break;
+    case 6:
+        printf("\nJune ");
+        break;
+    case 7:
+        printf("\nJuly ");
+        break;
+    case 8:
+        printf("\nAugust ");
+        break;
+    case 9:
+        printf("\nSeptember ");
+        break;
+    case 10:
+        printf("\nOctober ");
+        break;
+    case 11:
+        printf("\nNovember");
+        break;
+    case 12:
+        printf("\nDecember ");
+        break;
+    
+    default:
+        break;
+    }
+    return month;
+}
+
+// Main File or C file Starts Here
+#include <stdio.h>
+#include "monthCountnLeap.h"
+int main () 
+{   
+    int day, month, year, revert;
+
+    printf("Enter month: ");
+    scanf("%d", &month);
+    printf("Enter day: ");
+    scanf("%d", &day);
+    printf("Enter year: ");
+    scanf("%d", &year);
+    printf("Enter days to revert: ");
+    scanf("%d", &revert);
+
+        int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31 ,31 ,30, 31, 30, 31};
+
+        day -= revert;
+
+            while (day <= 0)
+            {
+                month--;
+
+                    if (month < 1)
+                    {
+                        year--;
+                        month = 12;
+                    }
+                    if (month == 2 && leapyear(year))
+                    {
+                        day += 29;
+                    }
+                    else 
+                    {
+                        day += daysInMonth[month];
+                    }
+
+            }
+            monthCount(month);
+            printf("%d, %d", day, year);
+
+    return 0;
+}
+// Credits to Pres Aliyah for the idea

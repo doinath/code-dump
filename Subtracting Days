@@ -1,42 +1,42 @@
-From one of the problems in our Final Exam:
-Problem name [Subtracting Days]
+// From one of the problems in our Final Exam:
+// Problem name [Subtracting Days]
 
-  If you can time travel, you can most definitely go back in time.
-Given the month, day, and year -- all integers (1-12 for the month, 1-31 for the day, and the year), 
-and the number of days to deduct, output the resulting day.
+//   If you can time travel, you can most definitely go back in time.
+// Given the month, day, and year -- all integers (1-12 for the month, 1-31 for the day, and the year), 
+// and the number of days to deduct, output the resulting day.
 
-Note to also consider leap years in your calculation.
+// Note to also consider leap years in your calculation.
 
-Sample Output 1
+// Sample Output 1
 
-Enter month: 12
-Enter day: 15
-Enter year: 2023
-Days to go back: 7
+// Enter month: 12
+// Enter day: 15
+// Enter year: 2023
+// Days to go back: 7
 
-December 8, 2023
+// December 8, 2023
 
-Sample Output 2
+// Sample Output 2
 
-Enter month: 5
-Enter day: 2
-Enter year: 2024
-Days to go back: 9
+// Enter month: 5
+// Enter day: 2
+// Enter year: 2024
+// Days to go back: 9
 
-April 23, 2024
+// April 23, 2024
 
-Sample Output 3
+// Sample Output 3
 
-Enter month: 3
-Enter day: 3
-Enter year: 2020
-Days to go back: 8
+// Enter month: 3
+// Enter day: 3
+// Enter year: 2020
+// Days to go back: 8
 
-February 24, 2020
+// February 24, 2020
 
 // | Code Starts Here |
 
-> Header File 
+// > Header File 
 
 #include <stdio.h>
   int leapyear(int year)
@@ -92,8 +92,8 @@ int monthCount(int month)
 }
 
 // Main File or C file Starts Here
+// #include "monthCountnLeap.h"
 #include <stdio.h>
-#include "monthCountnLeap.h"
 int main () 
 {   
     int day, month, year, revert;
